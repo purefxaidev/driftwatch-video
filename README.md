@@ -36,7 +36,7 @@ Donations fund compute (GPU hours) and dataset review. / เงินบริ�
 
 <img src="docs/usdt-erc20-qr.png" width="200" alt="USDT ERC20 QR">
 
-Donation page: https://purefxaidev.github.io/khwamjing-bench/
+Donation page: https://purefxaidev.github.io/driftwatch-video/
 
 ⚠️ Send **only USDT via ERC20**. Other networks or tokens may be lost permanently.
 ส่งเฉพาะ **USDT ผ่าน ERC20** เท่านั้น เครือข่ายหรือเหรียญอื่นอาจสูญหายถาวร
