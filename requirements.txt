@@ -1,0 +1,8 @@
+numpy
+opencv-python-headless
+matplotlib
+# optional semantic/face embeddings (CPU is fine):
+torch
+open_clip_torch
+pillow
+pytest
