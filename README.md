@@ -1,29 +1,29 @@
-# ⚖️ Khwamjing Bench (ความจริง)
+# 🎬 DriftWatch Video
 
-**Does an AI know when it doesn't know — in Thai?**
-**AI รู้ไหมว่าตัวเองไม่รู้ เมื่อตอบเป็นภาษาไทย?**
+**Why do AI-generated videos drift, flicker and lose identity over time — and how do we fix it?**
+**ทำไมวิดีโอที่สร้างด้วย AI ถึงเพี้ยน กระพริบ และเสียความต่อเนื่องของตัวละคร และจะแก้อย่างไร?**
 
-An open research project by PureFxAi measuring **hallucination and confidence calibration** of large language models when answering in Thai, compared with the same questions in English.
+An open research project by PureFxAi studying **temporal consistency** in AI video: an open benchmark and metrics for *drift* (faces, objects, colours and physics changing across frames) in open-weight video generation models, plus tests of lightweight methods to reduce it.
 
-โครงการวิจัยเปิดโดย PureFxAi เพื่อวัด **การแต่งข้อมูล (hallucination) และความแม่นยำของความมั่นใจ (calibration)** ของโมเดลภาษาเมื่อตอบเป็นภาษาไทย เทียบกับคำถามเดียวกันในภาษาอังกฤษ
+โครงการวิจัยเปิดโดย PureFxAi ศึกษา **ความต่อเนื่องตามเวลา** ของวิดีโอ AI: สร้างชุดทดสอบและตัวชี้วัดแบบเปิดสำหรับการ "เพี้ยน" (ใบหน้า วัตถุ สี ฟิสิกส์ที่เปลี่ยนระหว่างเฟรม) ในโมเดลสร้างวิดีโอแบบ open-weight แล้วทดลองวิธีลดปัญหานี้
 
-> **Status: early stage.** No benchmark results exist yet. Everything published here will include code and data to reproduce it.
-> **สถานะ: ระยะเริ่มต้น** ยังไม่มีผลลัพธ์ใด ๆ ทุกผลที่เผยแพร่จะมีโค้ดและข้อมูลให้ทำซ้ำได้
+> **Status: early stage.** No results exist yet. Everything published will include code, prompts, seeds and raw videos to reproduce it.
+> **สถานะ: ระยะเริ่มต้น** ยังไม่มีผลลัพธ์ ทุกผลที่เผยแพร่จะมีโค้ด prompt seed และวิดีโอดิบให้ทำซ้ำได้
 
 ## ❓ Research questions / คำถามวิจัย
-1. Do LLMs hallucinate more often in Thai than in English on identical factual questions? / โมเดลแต่งข้อมูลในภาษาไทยมากกว่าภาษาอังกฤษหรือไม่
-2. Is stated confidence ("I'm sure…") calibrated against actual accuracy in Thai? / ความมั่นใจที่โมเดลบอกตรงกับความถูกต้องจริงหรือไม่
-3. How often do models correctly say "ไม่ทราบ / I don't know" on unanswerable questions? / โมเดลยอมรับว่าไม่รู้บ่อยแค่ไหน
-4. Which cheap methods (prompting, self-consistency, retrieval) reduce Thai hallucination most? / วิธีง่าย ๆ แบบไหนลดการแต่งข้อมูลได้มากที่สุด
+1. Can drift be measured automatically in a way that agrees with human judgement? / วัดการเพี้ยนอัตโนมัติให้ตรงกับการตัดสินของคนได้หรือไม่
+2. How does drift grow with clip length, motion and number of subjects? / การเพี้ยนเพิ่มขึ้นอย่างไรตามความยาว การเคลื่อนไหว และจำนวนตัวละคร
+3. Which training-free methods (reference frames, feature caching, guidance tweaks) reduce drift, at what compute cost? / วิธีที่ไม่ต้องเทรนใหม่แบบไหนลดการเพี้ยนได้ และใช้ทรัพยากรเท่าไร
+4. Can video-understanding models flag drifted segments for regeneration? / โมเดลเข้าใจวิดีโอตรวจจับช่วงที่เพี้ยนเพื่อสร้างใหม่ได้หรือไม่
 
 ## 🗺️ Roadmap
-- [ ] **Phase 1** — Parallel Thai/English question set (answerable + deliberately unanswerable), community-reviewed, CC-BY licensed
-- [ ] **Phase 2** — Evaluation harness (open-weight models first), metrics: accuracy, abstention rate, Expected Calibration Error
-- [ ] **Phase 3** — First public report with full raw outputs
-- [ ] **Phase 4** — Test mitigation methods and publish what works and what doesn't
+- [ ] **Phase 1** — Open prompt suite (people, animals, objects, camera motion) + human rating protocol
+- [ ] **Phase 2** — Drift metrics (identity-embedding similarity, colour/optical-flow stability) validated against human ratings
+- [ ] **Phase 3** — Benchmark open-weight video models; publish raw outputs
+- [ ] **Phase 4** — Test & report mitigation methods, including negative results
 
 ## 🤝 Contributing / ร่วมพัฒนา
-Native Thai speakers who can write or verify questions are especially welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) and [research/TEMPLATE.md](research/TEMPLATE.md).
+Help with prompts, human ratings, metrics or GPU time is welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) and [research/TEMPLATE.md](research/TEMPLATE.md).
 
 ## 💚 Donate USDT / สนับสนุนด้วย USDT
 Donations fund compute (GPU hours) and dataset review. / เงินบริจาคใช้ค่าประมวลผลและการตรวจสอบชุดข้อมูล
@@ -34,7 +34,7 @@ Donations fund compute (GPU hours) and dataset review. / เงินบริ�
 0x920deab53daf94ca2030ad5ceec2265bf5686941
 ```
 
-<img src="docs/usdt-qr.png" width="200" alt="USDT ERC20 QR">
+<img src="docs/usdt-erc20-qr.png" width="200" alt="USDT ERC20 QR">
 
 Donation page: https://purefxaidev.github.io/khwamjing-bench/
 
@@ -45,4 +45,4 @@ Donations are voluntary support — **not an investment**, with no returns or re
 การบริจาคเป็นการสนับสนุนโดยสมัครใจ **ไม่ใช่การลงทุน** และไม่มีผลตอบแทนใด ๆ
 
 ## License
-Code: MIT. Dataset (when released): CC-BY-4.0.
+Code: MIT. Prompt suite & ratings (when released): CC-BY-4.0.
