@@ -1,3 +1,5 @@
+> **DISCONTINUED (2026-11-06)** — PureFxAi is no longer developing DriftWatch Video. This repository is archived. Do not use the old Pages site as an active product page.
+
 # 🎬 DriftWatch Video
 
 **Why do AI-generated videos drift, flicker and lose identity over time — and how do we fix it?**
